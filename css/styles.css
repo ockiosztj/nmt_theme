@@ -1,0 +1,414 @@
+/****************************
+    GOOGLE FONTS
+****************************/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/****************************
+    ROOT STYLES
+****************************/
+:root {
+    --primary: #4eb74b;
+    --primary-alternate: #33a32f;
+    --secondary: #363434;
+
+    --black: #000000;
+    --blue: #007bff;
+    --blue-light: #b8daff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #ff0000;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --yellow-alternate: #fcf8e3;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-light: #dee2e6;
+    --gray-dark: #343a40;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+   
+    --bg-color: var(--gray-light);
+    
+    --header-bg-color: var(--secondary);
+    --header-border-color: var(--gray);
+    --header-links: var(--white);
+    --header-links-hover: var(--white);
+    --header-links-border: var(--white);
+
+    --footer-bg-color: var(--secondary);
+    --footer-text: var(--white);
+    --footer-links: var(--white);
+    --footer-links-hover: var(--white);
+
+    --btn-bg-color: var(--primary);
+    --btn-text-color: var(--white);
+    --btn-bg-color-hover: var(--primary-alternate);
+    --btn-text-color-hover: var(--white);
+
+    --carousel-title-color: var(--white);
+    --carousel-description-color: var(--white);
+    --carousel-item-bg-color: rgba(0,0,0,0.7);
+
+    --oswald: 'Oswald', sans-serif!important;
+}
+
+/****************************
+    GENERAL STYLES
+****************************/
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html,body{
+    background-color: var(--bg-color);
+}
+.oswald {
+    font-family: var(--oswald);
+}
+main {
+    padding: 30px 0;
+}
+.container {
+	max-width: 1500px!important;
+	width: 100%!important;
+}
+.btn {
+    background-color: var(--btn-bg-color)!important;
+    color: var(--btn-text-color)!important;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 25px;
+    text-transform: uppercase;
+}
+.btn:hover {
+    background-color: var(--btn-bg-color-hover)!important;
+    color: var(--btn-text-color-hover)!important;
+}
+.border-green-top{
+    border-top: 6px solid var(--primary);
+}
+
+/****************************
+    HEADER STYLES
+****************************/
+header {
+    background-color: var(--header-bg-color);
+    border-bottom: 2px solid var(--header-border-color);
+    padding: 10px 0;
+}
+header .logo-header {
+    margin-top: -5px;
+}
+header .nav-link{
+    color: var(--header-links)!important;
+    border-bottom: 2px solid transparent;
+    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 auto 0 15px;
+    padding: 0!important;
+}
+header .nav-link:hover{
+    color: var(--header-links-hover)!important;
+    border-bottom: 2px solid var(--header-links-border);
+}
+
+/****************************
+    FOOTER STYLES
+****************************/
+footer {
+    background-color: var(--footer-bg-color);
+    padding: 60px 0 40px;
+}
+footer p{
+    color: var(--footer-text);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0 0 15px;
+}
+.logo-footer {
+    padding-bottom: 1rem;
+}
+.logo-footer img {
+    height: auto;
+    max-width: 100%;
+}
+.navigation-footer ul{
+    padding: 15px 0;
+}
+.navigation-footer ul > li {
+    display: block;
+    list-style: none;
+}
+.navigation-footer ul > li > a{
+    color: var(--footer-links);
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.navigation-footer ul > li > a:hover{
+    color: var(--footer-links-hover);
+    text-decoration: underline;
+}
+
+@media all and (max-width: 767px){
+    .logo-footer{
+        text-align: center;
+    }
+    .navigation-footer ul > li > a,footer p{
+        font-size: 15px;
+    }
+}
+
+/****************************
+    TOP NAVBAR INFORMATION STYLES
+****************************/
+.gsweb-hellobar-rogueinvesting{
+    background: var(--red);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 8888;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.gsweb-hellobar-rogueinvesting > .close-gsweb-hellorbar-rogueinvesting{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 8889;
+}
+.gsweb-hellobar-rogueinvesting>p{
+    font-size: 16px; line-height: 16px;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    color: var(--white);
+    font-weight: bold;
+}
+.gsweb-hellobar-rogueinvesting>p>a,.gsweb-hellobar-rogueinvesting>p>a:visited{
+    font-size: 16px; 
+    line-height: 16px;
+    color: var(--white);
+    text-decoration: underline;
+}
+body.gsweb-hellobar-rogueinvesting-active{
+    margin-top: 46px;
+}
+@media all and (max-width: 767px){
+    body.gsweb-hellobar-rogueinvesting-active{
+        margin-top: 62px;
+    }
+    .gsweb-hellobar-rogueinvesting>p{
+        padding: 15px 30px 15px 15px;
+    }
+    .gsweb-hellobar-rogueinvesting > .close-gsweb-hellorbar-rogueinvesting{
+        top: 15px;
+        right: 12px;
+    }
+}
+
+/****************************
+    CAROUSEL STYLES
+****************************/
+.carousel-inner {
+    height: 380px;
+}
+.carousel-item {
+    position: relative;
+}
+.carousel-item::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--carousel-item-bg-color);
+}
+.carousel-item .description-Item{
+    position: absolute;
+    padding: 0 60px;
+    top: 35%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+}
+.carousel-item h1{
+    color: var(--carousel-title-color);
+}
+.carousel-item p{
+    color: var(--carousel-description-color);
+}
+.carousel-item p.post-details{
+    font-size: 14px!important;
+    text-transform: capitalize;
+}
+.carousel-item p.label-gsweb{
+    background: var(--secondary);
+    display: inline-block;
+    font-size: 20px!important;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+.carousel-item p.post-btn{
+    position: absolute;
+    text-align: right!important;
+    right: 100px;
+    bottom: -80px;
+    z-index: 2;
+}
+
+@media all and (max-width: 767px){
+    .carousel-item{
+        text-align: center;
+    }
+    .carousel-item h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .carousel-item p{
+        display: none;
+    }
+    .carousel-item p.post-details,.carousel-item p.post-btn{
+        display: block;
+        text-align: center;
+    }
+    .carousel-inner {
+        height: 205px;
+    }
+    .carousel-item .description-Item{
+        position: absolute;
+        padding: 0 30px;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        transform: translate(0);
+        z-index: 1;
+    }
+    .carousel-item p.post-btn{
+        position: relative;
+        text-align: center!important;
+        right: auto;
+        bottom: auto;
+    }
+    .carousel-item p.post-btn a{
+        font-size: 10px;
+    }
+    .carousel-item p.label-gsweb{
+        font-size: 10px!important;
+        line-height: 10px;
+        padding: 5px 15px;
+    }
+}
+/****************************
+    RECENT POSTS STYLES
+****************************/
+.recent-posts{
+    background-color: var(--white);
+    border-top: 6px solid var(--primary);
+    padding: 20px 0;
+}
+.recent-posts article{
+    display: block;
+    padding: 15px;
+    width: 100%;
+}
+.recent-posts article h3,.recent-posts article h3 > a{
+    color: var(--black);
+}
+.recent-posts article p{
+    margin: 0 auto!important;
+}
+.recent-posts article p.post-details{
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: capitalize;
+}
+
+@media all and (max-width: 767px){
+    .recent-posts{
+        padding: 20px 0;
+    }
+}
+
+/****************************
+    BLOCK AD HOME PAGE STYLES
+****************************/
+.block-home-page{
+    background-color: var(--secondary);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 40px;
+    text-align: center;
+}
+.block-home-page h1{
+    color: var(--white);
+    font-weight: bold;
+}
+.block-home-page a.btn{
+    font-size: 20px;
+    width: 100%;
+}
+
+/****************************
+    BLOCK LAST POSTS BY CATEGORY HOME PAGE STYLES
+****************************/
+.last-category-posts{
+    background-color: var(--secondary);
+    margin-top: 30px;
+    padding: 30px 20px;
+}
+.last-category-posts article h3,.last-category-posts article h3 > a{
+    color: var(--white)
+}
+.last-category-posts article p,.last-category-posts article .entry-content{
+    color: var(--white)
+}
+.last-category-posts article a.btn-link{
+    color: var(--primary-alternate);
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/****************************
+    BLOCK TITLE ARCHIVE HEADER STYLE
+****************************/
+.block-title {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+}
+.block-title h1{
+    color: var(--white);
+    font-size: 60px;
+}
+
+/****************************
+    ARTICKE SINGLE POST STYLE
+****************************/
+main.single article.post img{
+    padding: 20px 0;
+}
