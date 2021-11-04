@@ -32,9 +32,8 @@
             $juanjimeneztj->vendorBS('js');
             $juanjimeneztj->vendorFAW('js');
 
-            
+            $juanjimeneztj->jquery();
             if($juanjimeneztj->top_navbar_active()){
-                $juanjimeneztj->jquery();
                 $juanjimeneztj->top_navbar_script();
             }
         ?>
