@@ -2,6 +2,247 @@
 // Functions to custom options in the theme
 function juanjimeneztj_customize_register($wp_customize){
     
+    /**
+	 * Primary color.
+	 */
+    $wp_customize->add_section('gsweb_juanjimeneztj_colors', array(
+        'title' => __('Theme colors', 'chartexperts'),
+        'priority' => 1,
+        'description' => 'Apply a custom color for buttons, links, featured images, etc.',
+    ));
+
+	// Add primary color hue setting and control.
+    $wp_customize->add_setting('gsweb_juanjimeneztj_colors_primary', array(
+		'transport' => 'refresh',
+		'default'   => '#4eb74b',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_primary',
+            array(
+                'label'          => __( 'Primary Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add primary hover color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_primary_hover', array(
+		'transport' => 'refresh',
+		'default'   => '#33a32f',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_primary_hover',
+            array(
+                'label'          => __( 'Primary Hover Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add secondary color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_secondary', array(
+		'transport' => 'refresh',
+		'default'   => '#363434',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_secondary',
+            array(
+                'label'          => __( 'Secondary Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add background color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_bg', array(
+		'transport' => 'refresh',
+		'default'   => '#dee2e6',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_bg',
+            array(
+                'label'          => __( 'Background Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add header background color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_header_bg', array(
+		'transport' => 'refresh',
+		'default'   => '#363434',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_header_bg',
+            array(
+                'label'          => __( 'Header Background Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add header border color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_header_bottom_border', array(
+		'transport' => 'refresh',
+		'default'   => '#6c757d',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_header_bottom_border',
+            array(
+                'label'          => __( 'Header bottom border Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add header links color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_header_links', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_header_links',
+            array(
+                'label'          => __( 'Header links Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add header links hover color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_header_links_hover', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_header_links_hover',
+            array(
+                'label'          => __( 'Header links Hover Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add header links border color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_header_links_border', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_header_links_border',
+            array(
+                'label'          => __( 'Header links Border Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add Footer background color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_footer', array(
+		'transport' => 'refresh',
+		'default'   => '#363434',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_footer',
+            array(
+                'label'          => __( 'Footer Background Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add Footer text color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_footer_text', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_footer_text',
+            array(
+                'label'          => __( 'Footer Text Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+    // Add Footer links hover color hue setting and control.
+	$wp_customize->add_setting('gsweb_juanjimeneztj_colors_footer_links_hover', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_colors_footer_links_hover',
+            array(
+                'label'          => __( 'Footer Links Hover Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_colors',
+				'priority' => 1,
+            )
+        )
+    );
+
+
+
+    // 
+    
     $wp_customize->add_section('gsweb_juanjimeneztj_stock', array(
         'title' => __('Tickers Stocks', 'chartexperts'),
         'priority' => 2,
@@ -204,3 +445,42 @@ function juanjimeneztj_customize_register($wp_customize){
 }
 
 add_action('customize_register', 'juanjimeneztj_customize_register');
+
+function traderplanet_colors_css_wrap() {	
+    $primary_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_primary' );
+    $primary_hover_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_primary_hover' );
+    $secondary_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_secondary' );
+    $bg_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_bg' );
+    $header_bg_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_header_bg' );
+    $header_border_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_header_bottom_border' );
+    $header_links_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_header_links' );
+    $header_links_hover_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_header_links_hover' );
+    $header_links_border_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_header_links_border' );
+    $footer_bg_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_footer' );
+    $footer_text_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_footer_text' );
+    $footer_link_hover_color = get_theme_mod( 'gsweb_juanjimeneztj_colors_footer_links_hover' );
+	
+	?>
+	<style type="text/css" id="custom-theme-colors">
+        :root {
+            --primary: <?= $primary_color ?>;
+            --primary-alternate: <?= $primary_hover_color ?>;
+            --secondary: <?= $secondary_color ?>;
+            --bg-color: <?= $bg_color ?>;
+    
+            --header-bg-color: <?= $header_bg_color ?>;
+            --header-border-color: <?= $header_border_color ?>;
+            --header-links: <?= $header_links_color ?>;
+            --header-links-hover: <?= $header_links_hover_color ?>;
+            --header-links-border: <?= $header_links_border_color ?>;
+
+            --footer-bg-color: <?= $footer_bg_color ?>;
+            --footer-text: <?= $footer_text_color ?>;
+            --footer-links: <?= $footer_text_color ?>;
+            --footer-links-hover: <?= $footer_link_hover_color ?>;
+
+        }
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'traderplanet_colors_css_wrap' );
